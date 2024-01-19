@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td valign="top">
+            <ul style="margin: 0; padding-bottom: 0">
+              <li>
+                <a href="/kanbas/Account/Profile/screen.html"> Account</a>
+              </li>
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li>
+                <a href="/kanbas/Courses/Home/screen.html">Courses</a>
+              </li>
+              <li>
+                <a href="#">Calendar</a>
+              </li>
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Studio</a></li>
+              <li><a href="#">Commons</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </td>
+          <td valign="top">
+            <ul style="margin: 0; padding-bottom: 0">
+              <li>
+                <a href="/kanbas/courses/Home/screen.html"> Home</a>
+              </li>
+              <li><a href="#"> Modules</a></li>
+              <li><a href="#"> Piazza</a></li>
+              <li>
+                <a href="#"> Zoom Meetings</a>
+              </li>
+              <li>
+                <a href="/kanbas/courses/Assignments/screen.html">
+                  Assignments</a
+                >
+              </li>
+              <li><a href="#"> Quizzes</a></li>
+              <li><a href="/kanbas/courses/Grades/screen.html"> Grades</a></li>
+              <li><a href="#"> People</a></li>
+              <li>
+                <a href="#"> Panopto Video</a>
+              </li>
+              <li>
+                <a href="#"> Discussions</a>
+              </li>
+              <li>
+                <a href="#"> Announcements</a>
+              </li>
+              <li><a href="#"> Pages</a></li>
+              <li><a href="#"> Files</a></li>
+              <li><a href="#"> Rubrics</a></li>
+              <li><a href="#"> Outcomes</a></li>
+              <li>
+                <a href="#"> Collaborations</a>
+              </li>
+              <li><a href="#"> Syllabus</a></li>
+              <li>
+                <a href="/kanbas/courses/settings/course_details/screen.html">
+                  Settings</a
+                >
+              </li>
+            </ul>
+          </td>
+          <td valign="top">
+            <table>
+              <tr>
+                <td>
+                  <select>
+                    <option value="speed_grader">SpeedGrader</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr style="width: 200%" />
+                </td>
+              </tr>
+              <tr>
+                <td><h3>Assignment Name</h3></td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="a1"
+                    name="a1"
+                    value="A1 - ENV + HTML"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea
+                    cols="20"
+                    rows="2"
+                    placeholder="Biography"
+                    title="tooltip"
+                    style="margin-top: 10px; margin-bottom: 10px"
+                  >
+This is the assignment description.</textarea
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Points</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="points"
+                    name="points"
+                    value="100"
+                    style="margin-bottom: 10px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Assignment Group</td>
+              </tr>
+              <tr>
+                <td>
+                  <select style="margin-bottom: 20px">
+                    <option value="assignments">ASSIGNMENTS</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Display Grade as</td>
+              </tr>
+              <tr>
+                <td>
+                  <select style="margin-bottom: 20px">
+                    <option value="percentage">Percentage</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Submission Type</td>
+              </tr>
+              <tr>
+                <td>
+                  <select style="margin-bottom: 20px">
+                    <option value="online">Online</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Online Entry Options</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    value="text_entry"
+                    name="text_entry"
+                    id="text_entry"
+                  />
+                  <label for="text_entry">Text Entry</label> <br />
+                  <input
+                    type="checkbox"
+                    value="website_url"
+                    name="website_url"
+                    id="website_url"
+                  />
+                  <label for="website_url">Website URL</label> <br />
+                  <input
+                    type="checkbox"
+                    value="media_recordings"
+                    name="media_recordings"
+                    id="media_recordings"
+                  />
+                  <label for="media_recordings">Media Recordings</label> <br />
+                  <input
+                    type="checkbox"
+                    value="student_annotation"
+                    name="student_annotation"
+                    id="student_annotation"
+                  />
+                  <label for="student_annotation">Student Annotation</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    value="file_uploads"
+                    name="file_uploads"
+                    id="file_uploads"
+                    style="margin-bottom: 20px"
+                  />
+                  <label for="file_uploads">File Uploads</label> <br />
+                </td>
+              </tr>
+              <tr>
+                <td>Assign<br />Assign To</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="everyone"
+                    name="everyone"
+                    value="Everyone"
+                    style="margin-bottom: 10px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Due</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="date"
+                    id="due"
+                    name="due"
+                    value="2021-01-01"
+                    style="margin-bottom: 10px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Available from</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="date"
+                    id="available_from"
+                    name="available_from"
+                    value="2021-01-01"
+                    style="margin-bottom: 10px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Until</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="date"
+                    id="until"
+                    name="until"
+                    value="2021-01-01"
+                    style="margin-bottom: 10px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="/kanbas/courses/Assignments/screen.html"
+                    ><button type="button" style="margin-right: 4px">
+                      Cancel
+                    </button></a
+                  ><a href="/kanbas/courses/Assignments/screen.html"
+                    ><button type="button">Save</button></a
+                  >
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
