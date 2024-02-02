@@ -4,73 +4,285 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Navigation</title>
+
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      rel="stylesheet"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/kanbas/courses/navigation/index.css" />
   </head>
   <body>
     <table>
       <tbody>
         <tr>
           <td valign="top">
-            <ul style="margin: 0; padding-bottom: 0">
+            <ul class="wd-kanbas-navigation">
               <li>
-                <a href="/kanbas/Account/Profile/screen.html"> Account</a>
+                <a href="http://northeastern.edu"
+                  ><br /><i
+                    class="fa-solid fa-n fa-xl"
+                    style="color: #ff0000"
+                  ></i
+                ></a>
               </li>
               <li>
-                <a href="#">Dashboard</a>
+                <a href="/Kanbas/Account/Profile/screen.html"
+                  ><i
+                    class="fa-solid fa-circle-user"
+                    style="color: #ffffff"
+                  ></i>
+                  Account</a
+                >
               </li>
               <li>
-                <a href="/kanbas/Courses/Home/screen.html">Courses</a>
+                <a href="/Kanbas/Dashboard/screen.html">
+                  <i class="fa-solid fa-gauge" style="color: #ff0000"></i>
+                  Dashboard</a
+                >
+              </li>
+              <li class="wd-active">
+                <a href="/Kanbas/Courses/Home/screen.html"
+                  ><i class="fa-solid fa-book" style="color: #ff0000"></i>
+                  Courses</a
+                >
               </li>
               <li>
-                <a href="#">Calendar</a>
+                <a href="#"
+                  ><i
+                    class="fa-solid fa-calendar-days"
+                    style="color: #ff0000"
+                  ></i>
+                  Calendar</a
+                >
               </li>
-              <li><a href="#">Inbox</a></li>
-              <li><a href="#">History</a></li>
-              <li><a href="#">Studio</a></li>
-              <li><a href="#">Commons</a></li>
-              <li><a href="#">Help</a></li>
+              <li>
+                <a href="#"
+                  ><i
+                    class="fa-solid fa-envelope-open-text"
+                    style="color: #ff0000"
+                  ></i
+                  ><br />
+                  Inbox</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-regular fa-clock" style="color: #ff0000"></i>
+                  History</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-desktop" style="color: #ff0000"></i>
+                  Studio</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i
+                    class="fa-solid fa-circle-right"
+                    style="color: #ff0000"
+                  ></i>
+                  Commons</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i
+                    class="fa-regular fa-circle-question"
+                    style="color: #ff0000"
+                  ></i
+                  ><br />Help</a
+                >
+              </li>
             </ul>
           </td>
           <td valign="top">
-            <ul style="margin: 0; padding-bottom: 0">
-              <li>
-                <a href="/kanbas/courses/Home/screen.html"> Home</a>
-              </li>
-              <li><a href="#"> Modules</a></li>
-              <li><a href="#"> Piazza</a></li>
-              <li>
-                <a href="#"> Zoom Meetings</a>
-              </li>
-              <li>
-                <a href="/kanbas/courses/Assignments/screen.html">
-                  Assignments</a
-                >
-              </li>
-              <li><a href="#"> Quizzes</a></li>
-              <li><a href="/kanbas/courses/Grades/screen.html"> Grades</a></li>
-              <li><a href="#"> People</a></li>
-              <li>
-                <a href="#"> Panopto Video</a>
-              </li>
-              <li>
-                <a href="#"> Discussions</a>
-              </li>
-              <li>
-                <a href="#"> Announcements</a>
-              </li>
-              <li><a href="#"> Pages</a></li>
-              <li><a href="#"> Files</a></li>
-              <li><a href="#"> Rubrics</a></li>
-              <li><a href="#"> Outcomes</a></li>
-              <li>
-                <a href="#"> Collaborations</a>
-              </li>
-              <li><a href="#"> Syllabus</a></li>
-              <li>
-                <a href="/kanbas/courses/settings/course_details/screen.html">
-                  Settings</a
-                >
-              </li>
-            </ul>
+            <table>
+              <tbody class="wd-navigation">
+                <ul style="margin: 0; padding: 0">
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                      </li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="/Kanbas/Courses/Modules/screen.html"
+                          >Modules</a
+                        >
+                      </li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="http://piazza.com">Piazza</a></li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="#">Zoom</a></li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="/Kanbas/Courses/Assignments/screen.html"
+                          >Assignments</a
+                        >
+                      </li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="#">Quizzes</a></li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                      </li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="#">People</a></li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li><a href="#">Panopto Video</a></li>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Discussions </a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Announcements </a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Pages</a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Files</a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Rubrics</a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Outcomes</a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Collaborations</a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li>
+                        <a href="#">Syllabus</a>
+                      </li>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-regular fa-eye-slash"
+                        style="color: gray"
+                      ></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <li class="wd-active">
+                        <a
+                          href="/kanbas/courses/settings/course_details/screen.html"
+                          >Settings</a
+                        >
+                      </li>
+                    </td>
+                  </tr>
+                </ul>
+              </tbody>
+            </table>
           </td>
           <td valign="top">
             <table>

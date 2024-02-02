@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="main-section">
+            <!-- Main content goes here -->
+            <div class="wd-margin-top-10 wd-top-bar">
+              <div>
+                <nav aria-label="breadcrumb">
+                  <div class="breadcrumb-container">
+                    <i
+                      class="fa-solid fa-bars wd-margin-left-10 wd-right-margin-30 wd-red-color"
+                    ></i>
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item wd-margin-top-15">
+                        <a
+                          href="#"
+                          class="wd-remove-text-decoration wd-red-color"
+                          >CS4550.12631.202410</a
+                        >
+                      </li>
+                      <li class="breadcrumb-item wd-margin-top-15">
+                        <a
+                          href="#"
+                          class="wd-remove-text-decoration wd-black-color"
+                          >Modules</a
+                        >
+                      </li>
+                    </ol>
+                  </div>
+                </nav>
+              </div>
+              <button type="button" class="btn btn-sm wd-right-margin-30">
+                <i class="fa-solid fa-glasses"></i> Student View
+              </button>
+            </div>
+            <hr class="wd-margin-bottom-20 wd-margin-left-10" />
+
+            <!-- Implement buttons Collapse All, View Progress, etc. here -->
+            <div class="container">
+              <div class="row justify-content-end">
+                <div class="col-auto wd-no-padding-right">
+                  <button type="button" class="btn btn-sm">Collapse All</button>
+                </div>
+                <div class="col-auto wd-no-padding-left wd-no-padding-right">
+                  <button type="button" class="btn btn-sm">
+                    View Progress
+                  </button>
+                </div>
+                <div class="col-auto wd-no-padding-left">
+                  <button type="button" class="btn btn-sm">
+                    <i
+                      class="fa-regular fa-circle-check"
+                      style="color: #000000"
+                    ></i>
+                    Publish All
+                    <i
+                      class="fa-solid fa-caret-down"
+                      style="color: #000000"
+                    ></i>
+                  </button>
+                </div>
+                <div class="col-auto wd-no-padding-left wd-no-padding-right">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-danger"
+                    style="background-color: red; color: white"
+                  >
+                    <i class="fa-solid fa-plus" style="color: #ffffff"></i>
+                    Module
+                  </button>
+                </div>
+                <div class="col-auto wd-no-padding-left">
+                  <button type="button" class="btn btn-sm">
+                    <i class="fa fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <hr class="wd-margin-bottom-30" />
+
+            <ul class="list-group wd-modules">
+              <li class="list-group-item">
+                <div>
+                  <i class="fa fa-ellipsis-v"></i> Week 0 - INTRO
+                  <span class="float-end">
+                    <i class="fa fa-check-circle text-success"></i>
+                    <i class="fa fa-plus ms-2"></i>
+                    <i class="fa fa-ellipsis-v ms-2"></i>
+                  </span>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i> Learning Objectives
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i>
+                    Introduction to the course
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i> Learning
+                    what is Web Development
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i> Creating
+                    a development environment
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i> Creating
+                    a Web Application
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i> Getting
+                    Started with the 1st assignment
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i> READING
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i> Full
+                    Stack Developer - Chapter 1 - Introduction
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v wd-right-margin-30"></i> Full
+                    Stack Developer - Chapter 2 - Creating User Interfaces With
+                    HTML
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i> SLIDES
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa-solid fa-link wd-red-color"></i>
+                    <a href="#" class="wd-red-color wd-remove-text-decoration"
+                      >Introduction to Web Development</a
+                    >
+                    <svg
+                      viewBox="0 0 1920 1920"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style="
+                        width: 1em;
+                        height: 1em;
+                        vertical-align: middle;
+                        fill: currentColor;
+                      "
+                      class="wd-red-color"
+                    >
+                      <path
+                        d="M1226.667 267c88.213 0 160 71.787 160 160v426.667H1280v-160H106.667v800C106.667 1523 130.56 1547 160 1547h1066.667c29.44 0 53.333-24 53.333-53.333v-213.334h106.667v213.334c0 88.213-71.787 160-160 160H160c-88.213 0-160-71.787-160-160V427c0-88.213 71.787-160 160-160Zm357.706 442.293 320 320c20.8 20.8 20.8 54.614 0 75.414l-320 320-75.413-75.414 228.907-228.906H906.613V1013.72h831.254L1508.96 784.707l75.413-75.414Zm-357.706-335.626H160c-29.44 0-53.333 24-53.333 53.333v160H1280V427c0-29.333-23.893-53.333-53.333-53.333Z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa-solid fa-link wd-red-color"></i>
+                    <a href="#" class="wd-red-color wd-remove-text-decoration"
+                      >Creating an HTTP server with Node.js</a
+                    >
+                    <svg
+                      viewBox="0 0 1920 1920"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style="
+                        width: 1em;
+                        height: 1em;
+                        vertical-align: middle;
+                        fill: currentColor;
+                      "
+                      class="wd-red-color"
+                    >
+                      <path
+                        d="M1226.667 267c88.213 0 160 71.787 160 160v426.667H1280v-160H106.667v800C106.667 1523 130.56 1547 160 1547h1066.667c29.44 0 53.333-24 53.333-53.333v-213.334h106.667v213.334c0 88.213-71.787 160-160 160H160c-88.213 0-160-71.787-160-160V427c0-88.213 71.787-160 160-160Zm357.706 442.293 320 320c20.8 20.8 20.8 54.614 0 75.414l-320 320-75.413-75.414 228.907-228.906H906.613V1013.72h831.254L1508.96 784.707l75.413-75.414Zm-357.706-335.626H160c-29.44 0-53.333 24-53.333 53.333v160H1280V427c0-29.333-23.893-53.333-53.333-53.333Z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa-solid fa-link wd-red-color"></i>
+                    <a href="#" class="wd-red-color wd-remove-text-decoration"
+                      >Creating a React Application</a
+                    >
+                    <svg
+                      viewBox="0 0 1920 1920"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style="
+                        width: 1em;
+                        height: 1em;
+                        vertical-align: middle;
+                        fill: currentColor;
+                      "
+                      class="wd-red-color"
+                    >
+                      <path
+                        d="M1226.667 267c88.213 0 160 71.787 160 160v426.667H1280v-160H106.667v800C106.667 1523 130.56 1547 160 1547h1066.667c29.44 0 53.333-24 53.333-53.333v-213.334h106.667v213.334c0 88.213-71.787 160-160 160H160c-88.213 0-160-71.787-160-160V427c0-88.213 71.787-160 160-160Zm357.706 442.293 320 320c20.8 20.8 20.8 54.614 0 75.414l-320 320-75.413-75.414 228.907-228.906H906.613V1013.72h831.254L1508.96 784.707l75.413-75.414Zm-357.706-335.626H160c-29.44 0-53.333 24-53.333 53.333v160H1280V427c0-29.333-23.893-53.333-53.333-53.333Z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="float-end">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="sidebar">
+            <!-- Sidebar content goes here -->
+            <div class="wd-course-status-container">
+              <p>Course Status</p>
+              <div class="wd-course-status-buttons-container">
+                <button type="button" class="btn btn-sm">
+                  <i class="fa-solid fa-ban"></i> Unpublish
+                </button>
+                <button type="button" class="btn btn-sm btn-danger" disabled>
+                  <i class="fa-solid fa-circle-check"></i> Published
+                </button>
+              </div>
+            </div>
+            <div
+              class="wd-course-status-buttons-container-rows wd-margin-top-10"
+            >
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-10 text-start"
+              >
+                <i class="fa-solid fa-file-import"></i>
+                Import Existing Content
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-5 text-start"
+              >
+                <i class="fa-regular fa-circle-right"></i> Import from Commons
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-5 text-start"
+              >
+                <i class="fa-regular fa-life-ring"></i> Choose Home Page
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-5 text-start"
+              >
+                <i class="fa-solid fa-chart-column"></i> View Course Stream
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-5 text-start"
+              >
+                <i class="fa-solid fa-bullhorn"></i> New Announcement
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-5 text-start"
+              >
+                <i class="fa-solid fa-chart-column"></i> New Analytics
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-block wd-margin-top-5 text-start"
+              >
+                <i class="fa-regular fa-bell"></i> View Course Notifications
+              </button>
+            </div>
+          </div>
+          <div class="wd-margin-top-10">
+            <p>To Do</p>
+            <hr />
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 wd-red-color">
+                  <i class="fa-solid fa-1"></i>
+                </div>
+                <div class="col-md-10">
+                  <a
+                    href="#"
+                    class="wd-red-color wd-remove-text-decoration wd-red-color wd-font-size-14"
+                    >Grade A1 - ENV + HTML
+                  </a>
+                  <br />
+                  <div class="wd-gray-color wd-font-size-12">
+                    100 points • Sep 18 at 11:59pm
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wd-margin-top-10 wd-display-flex wd-align-center">
+              <span class="wd-font-size-14">Coming Up</span>
+              <div class="wd-red-color">
+                <a
+                  href="#"
+                  class="wd-red-color wd-remove-text-decoration wd-font-size-14 wd-margin-left-40"
+                >
+                  <i class="fa-regular fa-calendar-days"></i> View Calendar
+                </a>
+              </div>
+            </div>
+            <hr />
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 wd-red-color">
+                  <i class="fa-regular fa-calendar-days"></i>
+                </div>
+                <div class="col-md-10">
+                  <a
+                    href="#"
+                    class="wd-red-color wd-remove-text-decoration wd-red-color wd-font-size-14"
+                    >Lecture
+                  </a>
+                  <br />
+                  <div class="wd-gray-color wd-font-size-12">
+                    CS4550.12631.202410 <br />
+                    Sep 11 at 11:45am
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 wd-red-color">
+                  <i class="fa-regular fa-calendar-days"></i>
+                </div>
+                <div class="col-md-10">
+                  <a
+                    href="#"
+                    class="wd-red-color wd-remove-text-decoration wd-red-color wd-font-size-14"
+                    >CS5610 06 SP23 Lecture
+                  </a>
+                  <br />
+                  <div class="wd-gray-color wd-font-size-12">
+                    CS4550.12631.202410 <br />
+                    Sep 11 at 6pm
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2 wd-red-color">
+                  <i class="fa-regular fa-calendar-days"></i>
+                </div>
+                <div class="col-md-10">
+                  <a
+                    href="#"
+                    class="wd-red-color wd-remove-text-decoration wd-red-color wd-font-size-14"
+                    >CS5610 Web Development Summer 1 2023 - LECTURE
+                  </a>
+                  <br />
+                  <div class="wd-gray-color wd-font-size-12">
+                    CS4550.12631.202410 <br />
+                    Sep 11 at 7pm
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <a
+                    href="#"
+                    class="wd-red-color wd-remove-text-decoration wd-red-color wd-font-size-14"
+                    >12 more in the next week ...
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
