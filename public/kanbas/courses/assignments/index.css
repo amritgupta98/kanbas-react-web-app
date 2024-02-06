@@ -32,6 +32,12 @@
 .wd-red-color {
   color: red;
 }
+.wd-white-color {
+  color: white;
+}
+.wd-green-color {
+  color: green;
+}
 .wd-disabled-red-color {
   color: #ff99aa;
 }
@@ -98,6 +104,14 @@
 
 .btn {
   background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: #333;
+}
+
+.btn-1 {
+  background-color: #5cb85c;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 6px 12px;
