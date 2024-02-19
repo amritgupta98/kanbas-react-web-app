@@ -22,6 +22,7 @@ function Grades() {
                 backgroundColor: "white",
                 color: "red",
               }}
+              className="ps-0 pe-0 pb-0"
             >
               Gradebook
             </Dropdown.Toggle>
