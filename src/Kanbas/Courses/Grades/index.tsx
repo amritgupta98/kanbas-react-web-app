@@ -1,5 +1,5 @@
 import { assignments, enrollments, grades, users } from "../../Database";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown } from "react-bootstrap";
 import { FaKeyboard } from "react-icons/fa";
@@ -91,9 +91,13 @@ function Grades() {
       <div className="table-responsive">
         <table className="table table-bordered table-striped text-center table-hover">
           <thead>
-            <th>Student Name</th>
+            <th className="text-start align-middle">Student Name</th>
             {as.map((assignment) => (
-              <th>{assignment.title}</th>
+              <th>
+                {assignment.title}
+                <br />
+                Out of 100
+              </th>
             ))}
           </thead>
           <tbody>
@@ -101,8 +105,13 @@ function Grades() {
               const user = users.find((user) => user._id === enrollment.user);
               return (
                 <tr>
-                  <td>
-                    {user?.firstName} {user?.lastName}
+                  <td className="text-start">
+                    <Link
+                      to={""}
+                      style={{ color: "red", textDecoration: "none" }}
+                    >
+                      {user?.firstName} {user?.lastName}
+                    </Link>
                   </td>
                   {assignments
                     .filter((assignment) => assignment.course === courseId)

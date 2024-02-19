@@ -35,7 +35,8 @@ function Assignments() {
                 <i className="fa-solid fa-plus"></i> Group
               </button>
               <button type="button" className="btn-red btn-danger btn-sm m-1">
-                <i className="fa-solid fa-plus"></i> Assignment
+                <i className="fa-solid fa-plus"></i>
+                <span className="wd-white-color">Assignment</span>
               </button>
               <button type="button" className="btn btn-sm">
                 <i className="fa fa-ellipsis-v"></i>

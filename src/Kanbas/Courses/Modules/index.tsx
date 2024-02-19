@@ -27,12 +27,11 @@ function Modules() {
           </ul>
         </div>
         <button className="btn-red btn-primary ms-1 col-2">
-          <FaPlus /> Module
+          <FaPlus /> <span className="wd-white-color">Module</span>
         </button>
         <button className="btn btn-primary ms-1 col">
           <FaEllipsisV />
         </button>
-        {/* </div> */}
       </div>
       <div className="row">
         <div className="col-12">
