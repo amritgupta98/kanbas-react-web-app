@@ -32,10 +32,10 @@ function Courses() {
         <hr />
       </div>
       <div className="row m-0">
-        <div className="col-2 p-0">
+        <div className="col-lg-2 p-0 d-none d-lg-block">
           <CourseNavigation />
         </div>
-        <div className="col-10 p-0">
+        <div className="col-12 col-lg-10 p-0">
           <div
             className="overflow-y-scroll bottom-0 end-0"
             style={{ left: "320px", top: "50px" }}

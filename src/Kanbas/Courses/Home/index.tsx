@@ -12,10 +12,10 @@ function Home() {
       />
       {/* <ModuleList /> */}
       <div className="row m-1">
-        <div className="col-9">
+        <div className="col-12 col-lg-9">
           <Modules />
         </div>
-        <div className="col-3">
+        <div className="col-3 d-none d-lg-block">
           <div className="sidebar">
             <div className="wd-course-status-container">
               <p className="wd-black-color">Course Status</p>
