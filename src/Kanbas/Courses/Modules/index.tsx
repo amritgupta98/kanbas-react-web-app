@@ -7,8 +7,7 @@ function Modules() {
   return (
     <div>
       <div className="row m-1">
-        {/* <div className="col-12"> */}
-        <button className="btn btn-primary col-3">Collapse All</button>
+        <button className="btn btn-primary col-2">Collapse All</button>
         <button className="btn btn-primary ms-1 col-3">View Progress</button>
         <div className="dropdown col-3">
           <button
