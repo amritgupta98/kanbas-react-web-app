@@ -2,7 +2,7 @@ import React from "react";
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { Link, useLocation } from "react-router-dom";
-import { courses, assignments } from "../../Kanbas/Database";
+import db from "../../Kanbas/Database";
 import { FaGlasses } from "react-icons/fa";
 
 function NavBar() {
@@ -20,7 +20,7 @@ function NavBar() {
   ) {
     assignmentId = parsedPathname[5];
 
-    const assignmentList = assignments.filter(
+    const assignmentList = db.assignments.filter(
       (assignment) => assignment.course === courseId
     );
     assignment =
@@ -29,7 +29,7 @@ function NavBar() {
   }
 
   // const [courseId, courseNav] = parsedPathname.slice(-2);
-  const course = courses.find((course) => course._id === courseId);
+  const course = db.courses.find((course) => course._id === courseId);
   return (
     <div className="mt-2">
       <nav aria-label="breadcrumb">

@@ -1,4 +1,4 @@
-import { assignments, enrollments, grades, users } from "../../Database";
+import db from "../../Database";
 import { Link, useParams } from "react-router-dom";
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown } from "react-bootstrap";
@@ -6,8 +6,12 @@ import { FaKeyboard } from "react-icons/fa";
 
 function Grades() {
   const { courseId } = useParams();
-  const as = assignments.filter((assignment) => assignment.course === courseId);
-  const es = enrollments.filter((enrollment) => enrollment.course === courseId);
+  const as = db.assignments.filter(
+    (assignment) => assignment.course === courseId
+  );
+  const es = db.enrollments.filter(
+    (enrollment) => enrollment.course === courseId
+  );
   return (
     <div>
       <div className="row m-0">
@@ -103,7 +107,9 @@ function Grades() {
           </thead>
           <tbody>
             {es.map((enrollment) => {
-              const user = users.find((user) => user._id === enrollment.user);
+              const user = db.users.find(
+                (user) => user._id === enrollment.user
+              );
               return (
                 <tr>
                   <td className="text-start">
@@ -114,11 +120,11 @@ function Grades() {
                       {user?.firstName} {user?.lastName}
                     </Link>
                   </td>
-                  {assignments
+                  {db.assignments
                     .filter((assignment) => assignment.course === courseId)
                     .map((assignment) => {
-                      const grade = grades.find(
-                        (grade) =>
+                      const grade = db.grades.find(
+                        (grade: { student: string; assignment: string }) =>
                           grade.student === enrollment.user &&
                           grade.assignment === assignment._id
                       );

@@ -9,9 +9,14 @@ import StringStateVariables from "./StringStateVariables";
 import DateStateVariable from "./DateStateVariable";
 import ObjectStateVariable from "./ObjectStateVariable";
 import ArrayStateVariable from "./ArrayStateVariable";
+import ReduxExamples from "./ReduxExamples";
 
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import ParentStateComponent from "./ParentStateComponent";
+import HelloRedux from "./ReduxExamples/HelloRedux";
+import CounterRedux from "./ReduxExamples/CounterRedux";
+import AddRedux from "./ReduxExamples/AddRedux";
+import TodoList from "./ReduxExamples/todos/TodoList";
 
 function sayHello() {
   alert("Hello");
@@ -32,6 +37,11 @@ const Assignment4 = () => {
       <ObjectStateVariable />
       <ArrayStateVariable />
       <ParentStateComponent />
+      <ReduxExamples />
+      <HelloRedux />
+      <CounterRedux />
+      <AddRedux />
+      <TodoList />
     </>
   );
 };

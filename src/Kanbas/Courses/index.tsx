@@ -1,4 +1,4 @@
-import { courses } from "../../Kanbas/Database";
+import db from "../../Kanbas/Database";
 import { Link, Navigate, Route, Routes, useParams } from "react-router-dom";
 
 import CourseNavigation from "./Navigation";
@@ -13,7 +13,7 @@ import Grades from "./Grades";
 import { useMediaQuery } from "react-responsive";
 import "./index.css";
 
-function Courses() {
+function Courses({ courses }: { courses: any[] }) {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   const isLargeScreen = useMediaQuery({ minWidth: 601 });
