@@ -34,7 +34,7 @@ const assignmentsSlice = createSlice({
         });
       },
       setAssignment: (state, action) => {
-        state.assignments = action.payload;
+        state.assignment = action.payload;
       },
     },
   });

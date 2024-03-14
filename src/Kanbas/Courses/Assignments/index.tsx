@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
+// import db from "../../Database";
 
 import "/node_modules/font-awesome/css/font-awesome.min.css";
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAssignment } from "./assignmentsReducer";
 
 function Assignments() {
   const { courseId } = useParams();
@@ -37,8 +38,58 @@ function Assignments() {
     setNewAssignmentId("A" + incrementedNum.toString());
   }, [assignmentId, assignmentList, newAssignmentId]);
 
+  const [deleteAssignmentId, setDeleteAssignmentId] = useState("");
+
+  const handleDeleteClick = (id: string) => {
+    setDeleteAssignmentId(id);
+  };
+  const dispatch = useDispatch();
+
   return (
     <>
+      <div
+        className="modal fade"
+        id="deleteAssignmentModal"
+        // tabIndex="-1"
+        aria-labelledby="deleteAssignmentModal"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="deleteAssignmentModal">
+                Delete Assignment
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">Confirm Delete Assignment</div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn-red"
+                onClick={() => {
+                  dispatch(deleteAssignment(deleteAssignmentId));
+                }}
+                data-bs-dismiss="modal"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -81,15 +132,6 @@ function Assignments() {
 
       <ul className="list-group wd-modules">
         <li className="list-group-item">
-          {/* <div>
-            <FaEllipsisV className="me-2" /> ASSIGNMENTS
-            <span className="float-end">
-              <FaCheckCircle className="text-success" />
-              <FaPlusCircle className="ms-2" />
-              <FaEllipsisV className="ms-2" />
-            </span>
-          </div> */}
-
           <div className="list-group-item rounded-0 wd-bg-lightgray">
             <i className="fa-solid fa-grip-vertical wd-modules ms-2"></i>
             <i className="fa-solid fa-caret-down wd-modules"></i>
@@ -108,18 +150,10 @@ function Assignments() {
             {assignmentList.map(
               (assignment: {
                 _id: any;
-                title:
-                  | string
-                  | number
-                  | boolean
-                  | React.ReactElement<
-                      any,
-                      string | React.JSXElementConstructor<any>
-                    >
-                  | Iterable<React.ReactNode>
-                  | React.ReactPortal
-                  | null
-                  | undefined;
+                title: string | null | undefined;
+                description: string | null;
+                due: Date | null;
+                points: string | null;
               }) => (
                 <li className="list-group-item rounded-0 wd-border-left-green-5">
                   <div className="container-fluid">
@@ -128,7 +162,7 @@ function Assignments() {
                         <i className="fa-solid fa-grip-vertical wd-modules"></i>
                         <i className="fa-solid fa-file-signature wd-green-color"></i>
                       </div>
-                      <div className="col-md-10 px-0">
+                      <div className="col-md-8 px-0">
                         <p className="wd-assignemnt-headings">
                           <Link
                             to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
@@ -138,16 +172,24 @@ function Assignments() {
                           </Link>
                         </p>
                         <p className="wd-assignemnt-text wd-gray-color">
-                          Week 0 - SETUP - Week starting on Monday September 5th
-                          (9/5/2022) Module |
+                          {assignment.description} Module |
                         </p>
                         <p className="wd-assignemnt-text wd-gray-color">
-                          <span className="wd-bold-text">Due</span> Sep 18, 2022
-                          at 11:59pm | 100 pts
+                          <span className="wd-bold-text">Due </span>
+                          {String(assignment.due)} | {assignment.points}
                         </p>
                       </div>
                       <div className="col">
                         <div className="float-end">
+                          <button
+                            type="button"
+                            className="btn btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#deleteAssignmentModal"
+                            onClick={() => handleDeleteClick(assignment._id)}
+                          >
+                            Delete Assignment
+                          </button>
                           <i className="fa-solid fa-circle-check wd-disabled-green-color m-3"></i>
                           <i className="fa-solid fa-ellipsis-vertical"></i>
                         </div>

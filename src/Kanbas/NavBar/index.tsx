@@ -4,6 +4,7 @@ import "./index.css";
 import { Link, useLocation } from "react-router-dom";
 import db from "../../Kanbas/Database";
 import { FaGlasses } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 function NavBar() {
   const { pathname } = useLocation();
@@ -13,6 +14,10 @@ function NavBar() {
   let assignment = "";
   let assignmentId = "";
 
+  const assignmentList = useSelector(
+    (state: any) => state.assignmentsReducer.assignments
+  ).filter((assignment: { course: string }) => assignment.course === courseId);
+
   if (
     parsedPathname[2] === "Courses" &&
     courseNav === "Assignments" &&
@@ -20,12 +25,10 @@ function NavBar() {
   ) {
     assignmentId = parsedPathname[5];
 
-    const assignmentList = db.assignments.filter(
-      (assignment) => assignment.course === courseId
-    );
     assignment =
-      assignmentList.find((assignment) => assignment._id === parsedPathname[5])
-        ?.title ?? "";
+      assignmentList.find(
+        (assignment: { _id: string }) => assignment._id === parsedPathname[5]
+      )?.title ?? "";
   }
 
   // const [courseId, courseNav] = parsedPathname.slice(-2);

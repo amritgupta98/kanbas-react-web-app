@@ -1,32 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
+// import db from "../../../Database";
 
 import "/node_modules/font-awesome/css/font-awesome.min.css";
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import { addAssignment } from "../assignmentsReducer";
+import { addAssignment, updateAssignment } from "../assignmentsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
 
+const dateObjectToHtmlDateString = (date: Date) => {
+  date = new Date(date);
+  return `${date.getFullYear()}-${date.getMonth() + 1 < 10 ? 0 : ""}${
+    date.getMonth() + 1
+  }-${date.getDate() + 1 < 10 ? 0 : ""}${date.getDate() + 1}`;
+};
+
 function AssignmentEditor() {
   const { assignmentId } = useParams();
-  const assignment = db.assignments.find(
-    (assignment) => assignment._id === assignmentId
-  );
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  };
   const dispatch = useDispatch();
 
-  // const assignmentList = useSelector(
-  //   (state: KanbasState) => state.assignmentsReducer.assignments
-  // );
-  // console.log("assignmentList", assignmentList);
-  // console.log("assignmentId", assignmentId);
+  const assignmentList = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignments
+  );
+
+  const [assignment, setAssignment] = useState({
+    _id: assignmentId,
+    title: "New Assignment",
+    description: "New Assignment Description",
+    points: 100,
+    due: new Date("2024-03-12"),
+    availableFrom: new Date("2024-03-12"),
+    until: new Date("2024-03-12"),
+    course: courseId,
+  });
+
+  const [existingAssignment, setExistingAssignment] = useState(false);
+
+  useEffect(() => {
+    setExistingAssignment(
+      assignmentList.some((item) => item._id === assignmentId)
+    );
+
+    if (existingAssignment) {
+      const foundAssignment = assignmentList.find(
+        (assignment) => assignment._id === assignmentId
+      );
+      if (foundAssignment) {
+        setAssignment({
+          ...foundAssignment,
+        });
+      }
+    }
+    // This will run only when assignmentList or assignmentId changes.
+  }, [assignmentList, assignmentId, courseId, existingAssignment]);
 
   return (
     <div>
@@ -36,48 +65,31 @@ function AssignmentEditor() {
         crossOrigin="anonymous"
       />
 
-      {/* <div className="float-end mb-4">
-        <i className="fa-solid fa-circle-check wd-red-color"> </i>
-        <span className="wd-red-color ms-1 me-2">Published</span>
-        <button type="button" className="btn btn-sm me-3">
-          <i className="fa-solid fa-ellipsis-vertical"></i>
-        </button>
-      </div>
-
-      <br />
-      <br />
-      <hr />
-      <h2>Assignment Name</h2>
-      <input value={assignment?.title} className="form-control mb-2" />
-      <button
-        onClick={handleSave}
-        className="btn-red btn-success ms-2 float-end"
-      >
-        Save
-      </button>
-      <Link
-        to={`/Kanbas/Courses/${courseId}/Assignments`}
-        className="btn btn-danger float-end"
-      >
-        Cancel
-      </Link>
-      <br />
-      <br />
-      <hr />
-      <hr /> */}
       <h2>Assignment Name</h2>
       <input
         type="text"
         className="form-control mb-3"
         id="a1"
         name="a1"
-        value={assignment?.title ?? "New Assignment Name"}
+        value={assignment.title}
+        onChange={(e) =>
+          setAssignment({
+            ...assignment,
+            title: e.target.value,
+          })
+        }
       />
-      <textarea className="form-control mb-3">
-        {assignment
-          ? "This assignment describes how to install the development environment for creating and working with Web applications we will be developing this semester. We will add new content every week, pushing the code to a GitHub source repository, and then deploying the content to a remote server hosted on Netlify."
-          : "New Assignment Description"}
-      </textarea>
+      <textarea
+        className="form-control mb-3"
+        id="assignmentDescription"
+        value={assignment.description}
+        onChange={(e: { target: { value: any } }) =>
+          setAssignment({
+            ...assignment,
+            description: e.target.value,
+          })
+        }
+      ></textarea>
 
       <form>
         <div className="row mb-3">
@@ -89,7 +101,13 @@ function AssignmentEditor() {
               type="number"
               className="form-control w-50"
               id="points"
-              value="100"
+              value={assignment.points}
+              onChange={(e) =>
+                setAssignment({
+                  ...assignment,
+                  points: parseInt(e.target.value),
+                })
+              }
             />
           </div>
         </div>
@@ -152,27 +170,51 @@ function AssignmentEditor() {
                 <b>Due</b>
               </p>
               <input
-                type="datetime-local"
+                type="date"
+                id="dueDate"
                 className="form-control mb-3"
-                value="2023-09-18T23:59"
+                value={dateObjectToHtmlDateString(assignment.due)}
+                onChange={(e) =>
+                  setAssignment({
+                    ...assignment,
+                    due: new Date(e.target.value),
+                  })
+                }
               />
-
               <div className="row mb-3">
                 <div className="col-sm-6">
                   <p className="m-1">
                     <b>Available From</b>
                   </p>
                   <input
-                    type="datetime-local"
+                    type="date"
+                    id="availableFromDate"
                     className="form-control mb-3"
-                    value="2023-09-06T12:00"
+                    value={dateObjectToHtmlDateString(assignment.availableFrom)}
+                    onChange={(e) =>
+                      setAssignment({
+                        ...assignment,
+                        availableFrom: new Date(e.target.value),
+                      })
+                    }
                   />
                 </div>
                 <div className="col-sm-6">
                   <p className="m-1">
                     <b>Until</b>
                   </p>
-                  <input type="datetime-local" className="form-control mb-3" />
+                  <input
+                    type="date"
+                    id="until"
+                    className="form-control mb-3"
+                    value={dateObjectToHtmlDateString(assignment.until)}
+                    onChange={(e) =>
+                      setAssignment({
+                        ...assignment,
+                        until: new Date(e.target.value),
+                      })
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -199,14 +241,21 @@ function AssignmentEditor() {
         <div className="float-end">
           <button
             onClick={() => {
-              dispatch(
-                addAssignment({
-                  ...assignment,
-                  _id: assignmentId,
-                  title: "New Assignment",
-                  course: courseId,
-                })
-              );
+              if (existingAssignment) {
+                dispatch(
+                  updateAssignment({
+                    ...assignment,
+                    assignmentList,
+                  })
+                );
+              } else {
+                dispatch(
+                  addAssignment({
+                    ...assignment,
+                    assignmentList,
+                  })
+                );
+              }
               navigate(`/Kanbas/Courses/${courseId}/Assignments`);
             }}
             className="btn-red btn-success ms-2 float-end"
