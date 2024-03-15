@@ -1,6 +1,4 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import db from "../Database";
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function Dashboard({
@@ -18,46 +16,6 @@ function Dashboard({
   deleteCourse: (course: any) => void;
   updateCourse: () => void;
 }) {
-  // const [courses, setCourses] = useState(db.courses);
-  // const [course, setCourse] = useState({
-  //   _id: "0",
-  //   name: "New Course",
-  //   number: "New Number",
-  //   startDate: "2023-09-10",
-  //   endDate: "2023-12-15",
-  //   image: "reactjs.jpg",
-  // });
-
-  // const addNewCourse = () => {
-  //   const newCourse = { ...course, _id: new Date().getTime().toString() };
-  //   setCourses([...courses, { ...course, ...newCourse }]);
-  // };
-
-  // const deleteCourse = (courseId: string) => {
-  //   setCourses(courses.filter((course) => course._id !== courseId));
-  // };
-
-  // <button
-  //   onClick={(event) => {
-  //     event.preventDefault();
-  //     setCourse(course);
-  //   }}
-  // >
-  //   Edit
-  // </button>;
-
-  // const updateCourse = () => {
-  //   setCourses(
-  //     courses.map((c) => {
-  //       if (c._id === course._id) {
-  //         return course;
-  //       } else {
-  //         return c;
-  //       }
-  //     })
-  //   );
-  // };
-
   return (
     <div className="p-4">
       <h1>Dashboard</h1> <hr />
@@ -97,7 +55,11 @@ function Dashboard({
             <div key={course._id} className="col" style={{ width: 300 }}>
               <div className="card">
                 <img
-                  src={`/images/${course.image}`}
+                  src={
+                    course.image
+                      ? `/images/${course.image}`
+                      : "/images/reactjs.jpg"
+                  }
                   alt={course.name}
                   className="card-img-top"
                   style={{ height: 150 }}
